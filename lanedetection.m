@@ -1,14 +1,14 @@
 clc;
 clear all;
 close all;
-vidReader = VideoReader('22.mp4');
+vidReader = VideoReader('22.mp4'); %input your sample video here, keep it in same folder as the file
 
 outputVideo = VideoWriter('roadHighlight.mp4', 'MPEG-4');
 outputVideo.FrameRate = vidReader.FrameRate;
 open(outputVideo);
 
 videoPlayer = vision.VideoPlayer('Name', 'Road Highlight', ...
-    'Position', [100, 100, 700, 400]);
+    'Position', [100, 100, 700, 400]); % An Output file named Road Highlight will be creaated which highlights the lane in the sample video
 
 
 while hasFrame(vidReader)
